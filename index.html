@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Time Machine - See Your Future Self</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">&#9201;</span>
+                <h1>AI Time Machine</h1>
+            </div>
+            <p class="tagline">Upload your photo and see how you'd look at different ages</p>
+        </header>
+
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                </div>
+                <h3>Drop your photo here</h3>
+                <p>or click to browse</p>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+            <div class="preview-container" id="previewContainer" style="display:none;">
+                <img id="previewImage" alt="Preview">
+                <div class="preview-actions">
+                    <button class="btn btn-primary" id="transformBtn">
+                        <span class="btn-icon">&#9889;</span> Transform Through Time
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <span class="btn-icon">&#8634;</span> Choose Another Photo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display:none;">
+            <div class="loading-spinner"></div>
+            <p>Traveling through time...</p>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display:none;">
+            <h2 class="results-title">Your Journey Through Time</h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+            </div>
+            <div class="age-grid" id="ageGrid">
+                <div class="age-card" data-age="child">
+                    <div class="card-header">
+                        <span class="age-badge">5-10 yrs</span>
+                        <h3>Child</h3>
+                    </div>
+                    <div class="card-image">
+                        <canvas id="canvasChild"></canvas>
+                    </div>
+                    <p class="age-desc">Innocent & Youthful</p>
+                </div>
+                <div class="age-card" data-age="young">
+                    <div class="card-header">
+                        <span class="age-badge">20-25 yrs</span>
+                        <h3>Young Adult</h3>
+                    </div>
+                    <div class="card-image">
+                        <canvas id="canvasYoung"></canvas>
+                    </div>
+                    <p class="age-desc">Vibrant & Energetic</p>
+                </div>
+                <div class="age-card" data-age="adult">
+                    <div class="card-header">
+                        <span class="age-badge">35-40 yrs</span>
+                        <h3>Adult</h3>
+                    </div>
+                    <div class="card-image">
+                        <canvas id="canvasAdult"></canvas>
+                    </div>
+                    <p class="age-desc">Mature & Confident</p>
+                </div>
+                <div class="age-card" data-age="elderly">
+                    <div class="card-header">
+                        <span class="age-badge">70+ yrs</span>
+                        <h3>Elderly</h3>
+                    </div>
+                    <div class="card-image">
+                        <canvas id="canvasElderly"></canvas>
+                    </div>
+                    <p class="age-desc">Wise & Distinguished</p>
+                </div>
+                <div class="age-card featured" data-age="future">
+                    <div class="card-header">
+                        <span class="age-badge glow">Future</span>
+                        <h3>Year 2080</h3>
+                    </div>
+                    <div class="card-image">
+                        <canvas id="canvasFuture"></canvas>
+                    </div>
+                    <p class="age-desc">Beyond imagination</p>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="btn btn-primary" id="downloadAll">
+                    <span class="btn-icon">&#8615;</span> Download All
+                </button>
+                <button class="btn btn-secondary" id="newPhoto">
+                    <span class="btn-icon">&#8634;</span> Try Another Photo
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>AI Time Machine &mdash; A journey through age &amp; time</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
